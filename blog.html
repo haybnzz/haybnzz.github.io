@@ -525,11 +525,118 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
+    <div class="background"><main>
+        <aside class="sidebar" data-sidebar>
+            <div class="sidebar-info">
+               <img class="" src="images/haydenbanz.png" width="100" height="100"/>
+                <button class="info_more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </div>
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+                <ul class="contacts-list">
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="mailto:t5hlt8zcp@mozmail.com" class="contact-link">t5hlt8zcp@mozmail.com</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Phone</p>
+                            <a href="tel://++1 87974388854" class="contact-link">+1 87974388854</a>
+                        </div>
+                    </li>
+                    <li class="contact-item"></li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Location</p>
+                            <address>77, Kowloon Walled City, Hong Kong</address>
+                        </div>
+                    </li>
+                </ul>
+                <div class="separator"></div>
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a href="https://github.com/haydenzbanz/" class="social-link">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://twitter.com/0x_h4y" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://www.instagram.com/Hayden.pvttt" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </aside>
+<!--
+  #main-content
+-->
+<div class="main-content">
+
+    <!--
+      #NAVBAR
+    -->
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li class="navbar-item">
+          <button class="" data-nav-link>About</button>
+        </li>
+        <li class="navbar-item">
+          <button onclick="window.location.href='#work'" class="navbar-link" data-nav-link>Service</button>
+        </li>
+        <li class="navbar-item">
+          <button class="navbar-link" onclick="window.location.href='#blog'" data-nav-link>Blog</button>
+        </li>
+        <li class="navbar-item">
+          <button  onclick="window.location.href='#portfolio'" class="navbar-link" data-nav-link>Portfolio</button>
+        </li>
+        <li class="navbar-item">
+          <button class="navbar-link" onclick="window.location.href='contact.html'">Contact</button>
+        </li>
+      </ul>
+    </nav>
+
+    
+    
+    <!--
+    - #ABOUT
+-->
+
+<article class="about active" data-page="about">
  <glitch id="blog">
   <h2 class="h2 article-title">BLOG</h2><br>
           <div class="product-container">
             
-
+     <!-- Blog 1 -->        
+ <div class="product-card">
+        <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*t8Adnsmb1pBdfZLyaL6ryQ.png" alt="From Zero to Hero: MicroPython for Beginners By Hayden Barnes" class="product-image">
+        <div class="product-title">From Zero to Hero: MicroPython for Beginners</div>
+        <div class="product-description">Micro Python is an open-source implementation of Python 3, specifically designed for micro-controllers with limited memory..</div>
+        <div class="button-container">
+            <button class="read-more-btn" onclick="window.location.href='https://medium.com/@haydenbanz/from-zero-to-hero-micropython-for-beginners-3708b41247ae'">Read More</button>
+            <button class="heart-btn" onclick="showFlyingHeart(this)">&#10084;</button>
+            <img width="25" height="25"  class="share-icon" src="https://img.icons8.com/fluency/48/share--v2.png" alt="share--v2" onclick="shareProduct('From Zero to Hero: MicroPython for Beginners', 'Micro Python is an open-source implementation of Python 3, specifically designed for micro-controllers with limited memory.', 'https://medium.com/@haydenbanz/from-zero-to-hero-micropython-for-beginners-3708b41247ae')"/>
+        </div>
+    </div>
  <!-- Blog 1 -->
       <div class="product-card">
         <img SRC="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*6nH3K1o3Yapo7WU5Ng8C6A.png" alt="Stop Scrolling, Start Experiencing: Why Apple Vision Pro Will Blow Your Mind" class="product-image">
@@ -635,7 +742,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 
 </script>
-
+</article>
 
 </HEADER>
 
