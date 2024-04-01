@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta property="og:image" content="">
+  <title></title>
+  <script>
+    function getUrlParameter(name) {
+      name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    window.onload = function() {
+      var url = getUrlParameter('url');
+      var title = getUrlParameter('title');
+      var description = getUrlParameter('description');
+      var image = getUrlParameter('image');
+
+      if (title) {
+        document.title = title;
+      }
+
+      if (description) {
+        document.querySelector('meta[name="description"]').setAttribute('content', description);
+      }
+
+      if (image) {
+        document.querySelector('meta[property="og:image"]').setAttribute('content', image);
+      }
+
+      if (url) {
+        setTimeout(function() {
+          window.location.href = url;
+        }, 3000); // Redirect after 3 seconds (adjust as needed)
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+</body>
+</html>
