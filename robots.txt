@@ -1,0 +1,9 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://haydenbanz.github.io/sitemap.xml
+
+Allow: /blog
+Allow: /portfolio
+Allow: /contact.html
+Allow: /Speechstylis-AI.html
