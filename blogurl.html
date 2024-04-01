@@ -1,6 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  function sendAnalyticsData() {
+    function getIPInfo() {
+      return new Promise((resolve, reject) => {
+        $.get('https://ipinfo.io', (response) => {
+          resolve(response);
+        }, 'jsonp').fail((error) => {
+          reject(error);
+        });
+      });
+    }
+
+    const date = new Date();
+    const dayTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    const referringURL = document.referrer || 'Direct visit';
+    const currentURL = window.location.href;
+    const userAgent = navigator.userAgent;
+
+    getIPInfo().then((ipInfo) => {
+      const data = {
+        date: date.toISOString(),
+        dayTime: dayTime,
+        referringURL: referringURL,
+        currentURL: currentURL,
+        userAgent: userAgent,
+        ip: ipInfo.ip,
+        country: ipInfo.country,
+        region: ipInfo.region,
+        city: ipInfo.city,
+        org: ipInfo.org,
+      };
+
+      // Add Discord webhook data
+      const discordWebhookData = {
+        content: 'Analytics data from your website:',
+        embeds: [{
+          title: 'Analytics Details',
+          fields: [
+            { name: 'Date', value: data.date },
+            { name: 'Day Time', value: data.dayTime },
+            { name: 'Referring URL', value: data.referringURL },
+            { name: 'Current URL', value: data.currentURL },
+            { name: 'User Agent', value: data.userAgent },
+            { name: 'IP', value: data.ip },
+            { name: 'Country', value: data.country },
+            { name: 'Region', value: data.region },
+            { name: 'City', value: data.city },
+            { name: 'Organization', value: data.org },
+          ]
+        }]
+      };
+
+      const webhookEndpoint = 'https://discord.com/api/webhooks/1173553998092058744/8eR9UZvUeOqa9n7k1T8CObpCMxUpjfGDJKKR7IN7-aLfVzjNTIPU_vV8Ds0wPSC74WMU';
+      const webhookMethod = 'POST';
+
+      $.ajax({
+        url: webhookEndpoint,
+        method: webhookMethod,
+        contentType: 'application/json',
+        data: JSON.stringify(discordWebhookData),
+        success: function(response) {
+          console.log('Data sent successfully:', response);
+        },
+        error: function(error) {
+          console.error('Error sending data to webhook:', error);
+        }
+      });
+    }).catch((error) => {
+      console.error('Error getting IP information:', error);
+    });
+  }
+
+  $(document).ready(function() {
+    sendAnalyticsData();
+  });
+</script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMT3FZ6W');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q3J7XLFSW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Q3J7XLFSW');
+</script>
+
+ <!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q3J7XLFSW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-1Q3J7XLFSW');
+</script>
+
+
+
+
+
+
+   
+
+
+   
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
