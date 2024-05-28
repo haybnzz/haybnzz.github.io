@@ -302,20 +302,19 @@ gtag('config', 'G-1Q3J7XLFSW');
 
     <article class="about active" data-page="about">
         <h2 class="h2 article-title">HaydenGPT</h2>
- <style>
-        .responsive-iframe-container {
-            position: relative;
+            <style>
+  .responsive-iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            height: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            overflow: hidden;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Hide any overflow content */
         }
         .responsive-iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            height: 56.25vw; /* 16:9 aspect ratio relative to width */
+            max-height: 100vh; /* Ensure it does not exceed viewport height */
             border: 0;
         }
     </style>
