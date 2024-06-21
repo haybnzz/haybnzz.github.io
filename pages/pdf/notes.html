@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Form</title>
+    <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById("name").value;
+            var technology = document.getElementById("technology").value;
+
+            if (!name || !technology) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            var sessionId = new Date().getTime();
+            setCookie("name", name, 1);
+
+            var userParam = getParameterByName('user');
+            var redirectUrl = "";
+
+            switch(technology) {
+                case "eft":
+                    redirectUrl = "eft.html";
+                    break;
+                case "fpt":
+                    redirectUrl = "fpt.html";
+                    break;
+                case "fwm":
+                    redirectUrl = "fwm.html";
+                    break;
+                case "nft":
+                    redirectUrl = "nft.html";
+                    break;
+                case "rft":
+                    redirectUrl = "rft.html";
+                    break;
+                default:
+                    alert("Invalid selection");
+                    return;
+            }
+
+            if (userParam) {
+                redirectUrl += "?user=" + userParam + "&id=1";
+            } else {
+                redirectUrl += "?id=1";
+            }
+
+            window.location.href = redirectUrl;
+        }
+    </script>
+</head>
+<body>
+    <h1>Technology Selection Form</h1>
+    <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="technology">Select Technology:</label>
+        <select id="technology" name="technology">
+            <option value="eft">Enzyme Food Technology</option>
+            <option value="fpt">Food Packing Technology</option>
+            <option value="fwm">Food Waste Management</option>
+            <option value="nft">Nutraceuticals in Food Technology</option>
+            <option value="rft">Refrigeration Info Technology</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
