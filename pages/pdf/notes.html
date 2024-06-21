@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://haydenbanz.github.io/css/hayden.css">
+    <link rel="stylesheet" href="https://haydenbanz.github.io/css/hayden.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirect Form</title>
     <script>
+        // Function to set cookie
         function setCookie(name, value, days) {
             var expires = "";
             if (days) {
                 var date = new Date();
-                date.setTime(date.getTime() + (days*24*60*60*1000));
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
         }
 
+        // Function to get parameter from URL
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
             var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -24,14 +32,17 @@
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
 
+        // Function to handle form submission
         function submitForm(event) {
             event.preventDefault();
-            
-            var name = document.getElementById("name").value;
+
+            var nameInput = document.getElementById("name");
+            var name = nameInput.value.trim();
             var technology = document.getElementById("technology").value;
 
-            if (!name || !technology) {
-                alert("Please fill out all fields.");
+            // Validate name if visible
+            if (nameInput.style.display !== "none" && (!name || name === "")) {
+                alert("Please enter your name.");
                 return;
             }
 
@@ -41,7 +52,7 @@
             var userParam = getParameterByName('user');
             var redirectUrl = "";
 
-            switch(technology) {
+            switch (technology) {
                 case "eft":
                     redirectUrl = "eft.html";
                     break;
@@ -70,10 +81,40 @@
 
             window.location.href = redirectUrl;
         }
+
+        // Function to handle page load
+        window.onload = function () {
+            var nameCookie = getCookie("name");
+            var nameInput = document.getElementById("name");
+
+            if (nameCookie) {
+                // If name cookie exists, hide name input
+                nameInput.style.display = "none";
+            } else {
+                // Otherwise, show name input
+                nameInput.style.display = "block";
+            }
+        };
+
+        // Function to get cookie value by name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) === 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
     </script>
 </head>
 <body>
-    <h1>Technology Selection Form</h1>
+    <h1>FOOD TECHNOLOGY  NOTES</h1>
     <form onsubmit="submitForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
