@@ -47,10 +47,8 @@
             return;
         }
 
-        // Set cookie only if name is entered
-        if (name !== "") {
-            setCookie("name", name, 1);
-        }
+        var sessionId = new Date().getTime();
+        setCookie("name", name, 1);
 
         var userParam = getParameterByName('user');
         var redirectUrl = "";
@@ -89,10 +87,12 @@
     window.onload = function () {
         var nameCookie = getCookie("name");
         var nameInput = document.getElementById("name");
+        var userElement = document.getElementById("USER");
 
         if (nameCookie) {
-            // If name cookie exists, hide name input
+            // If name cookie exists, hide name input and display name
             nameInput.style.display = "none";
+            userElement.innerHTML = "Welcome, " + nameCookie + "!";
         } else {
             // Otherwise, show name input
             nameInput.style.display = "block";
@@ -115,7 +115,6 @@
         return null;
     }
 </script>
-
 </head>
 <body>
        <div class="background"><main>
@@ -220,7 +219,7 @@
     <h2 class="h2 article-title">FOOD TECH  NOTES</h2>
 
     <form onsubmit="submitForm(event)">
-        <label for="name">Name:</label>
+        <label for="name">Name:</label><p id="USER"></p>
         <input type="text" id="name" name="name"><br><br>
 
         <label for="technology">Select Technology:</label>
