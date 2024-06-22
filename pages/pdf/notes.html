@@ -2,7 +2,44 @@
 <html lang="en">
 <head>
     
+<script>
+        let startTime;
+        let endTime;
 
+        window.onload = () => {
+            startTime = new Date().getTime();
+        };
+
+        window.onbeforeunload = () => {
+            endTime = new Date().getTime();
+            const interactionTime = endTime - startTime;
+            storeInteractionTime(interactionTime);
+            sendInteractionTime(interactionTime);
+        };
+
+        function storeInteractionTime(time) {
+            let totalInteractionTime = parseInt(localStorage.getItem('totalInteractionTime')) || 0;
+            totalInteractionTime += time;
+            localStorage.setItem('totalInteractionTime', totalInteractionTime);
+        }
+
+        function sendInteractionTime(time) {
+            const webhookUrl = 'https://discord.com/api/webhooks/1227880201741144064/gKTB_mXa9r2rkMCrKnghqJFeNIlhNxS_1OGg_0oKmLAhEvO2pMTs1nRs9KoSg_o7SEvl';
+            const totalInteractionTime = parseInt(localStorage.getItem('totalInteractionTime')) || 0;
+            
+            const message = {
+                content: `Interaction time on this page: ${time} ms\nTotal interaction time: ${totalInteractionTime} ms`
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(message),
+            });
+        }
+    </script>
     <!-- External CSS -->
     <link rel="stylesheet" href="https://haydenbanz.github.io/css/hayden.css">
     <link rel="stylesheet" href="https://haydenbanz.github.io/css/hayden.css">
