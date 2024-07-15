@@ -37,24 +37,23 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
   <link rel="icon" href="/favicons/favicon.ico">
   <script>
-        // Function to get URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        // Check if podcast parameter is present and redirect
-        window.onload = function () {
-            var podcastLink = getUrlParameter('podcast');
-            if (podcastLink !== '') {
-                window.location.replace(podcastLink);
+        // Function to redirect based on URL parameter
+        function redirectIfParameterPresent() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var pcodeParam = urlParams.get('pcode');
+            if (pcodeParam === '108') {
+                var spotifyLink = 'https://open.spotify.com/episode/4aoazMvsWPOA458eCxAtsz?si=utK_SAvcSRG-_nZzB4oPug&t=36';
+                window.location.replace(spotifyLink);
             } else {
-                // Handle if parameter is not present or empty
-                console.log('Podcast parameter not found. Loading default content...');
+                // Handle if parameter is not present or not matching
+         console.log(listen to podcast...');
                 // Replace with default content loading logic or remove this else block if not needed
             }
+        }
+
+        // Call function to check and redirect on page load
+        window.onload = function () {
+            redirectIfParameterPresent();
         };
     </script>
 
