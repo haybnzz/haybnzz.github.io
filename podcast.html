@@ -36,7 +36,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
   <link rel="icon" href="/favicons/favicon.ico">
-   <script>
+  <script>
         // Function to get URL parameters
         function getUrlParameter(name) {
             name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
@@ -52,9 +52,130 @@
                 window.location.replace(podcastLink);
             } else {
                 // Handle if parameter is not present or empty
-                console.log('Podcast parameter not found.');
+                console.log('Podcast parameter not found. Loading default content...');
+                // Replace with default content loading logic or remove this else block if not needed
             }
         };
+    </script>
+
+
+<!-- Hotjar Tracking Code for https://haydenbanz.github.io/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:5033503,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+ <!-- script -->
+   
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  function sendAnalyticsData() {
+    function getIPInfo() {
+      return new Promise((resolve, reject) => {
+        $.get('https://ipinfo.io', (response) => {
+          resolve(response);
+        }, 'jsonp').fail((error) => {
+          reject(error);
+        });
+      });
+    }
+
+    const date = new Date();
+    const dayTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    const referringURL = document.referrer || 'Direct visit';
+    const currentURL = window.location.href;
+    const userAgent = navigator.userAgent;
+
+    getIPInfo().then((ipInfo) => {
+      const data = {
+        date: date.toISOString(),
+        dayTime: dayTime,
+        referringURL: referringURL,
+        currentURL: currentURL,
+        userAgent: userAgent,
+        ip: ipInfo.ip,
+        country: ipInfo.country,
+        region: ipInfo.region,
+        city: ipInfo.city,
+        org: ipInfo.org,
+      };
+
+      // Add Discord webhook data
+      const discordWebhookData = {
+        content: 'Analytics data from your website:',
+        embeds: [{
+          title: 'Analytics Details',
+          fields: [
+            { name: 'Date', value: data.date },
+            { name: 'Day Time', value: data.dayTime },
+            { name: 'Referring URL', value: data.referringURL },
+            { name: 'Current URL', value: data.currentURL },
+            { name: 'User Agent', value: data.userAgent },
+            { name: 'IP', value: data.ip },
+            { name: 'Country', value: data.country },
+            { name: 'Region', value: data.region },
+            { name: 'City', value: data.city },
+            { name: 'Organization', value: data.org },
+          ]
+        }]
+      };
+
+      const webhookEndpoint = 'https://discord.com/api/webhooks/1262366412169809980/fN3-UDBGCAZCJkSmsDi4IjPftmYguyrgNmz58Mnmvl61QKAUgbLPTzjzIuvj-ggibBrm';
+      const webhookMethod = 'POST';
+
+      $.ajax({
+        url: webhookEndpoint,
+        method: webhookMethod,
+        contentType: 'application/json',
+        data: JSON.stringify(discordWebhookData),
+        success: function(response) {
+          console.log('Data sent successfully:', response);
+        },
+        error: function(error) {
+          console.error('Error sending data to webhook:', error);
+        }
+      });
+    }).catch((error) => {
+      console.error('Error getting IP information:', error);
+    });
+  }
+
+  $(document).ready(function() {
+    sendAnalyticsData();
+  });
+</script>
+   
+
+
+     <script>
+        // Function to redirect based on URL parameter
+        function redirectIfParameterPresent() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var pcodeParam = urlParams.get('pcode');
+            if (pcodeParam === '108') {
+                var spotifyLink = 'https://open.spotify.com/episode/4aoazMvsWPOA458eCxAtsz?si=utK_SAvcSRG-_nZzB4oPug&t=36';
+                window.location.replace(spotifyLink);
+            } else {
+                // Handle if parameter is not present or not matching
+                console.log('Parameter pcode=108 not found. Loading default content...');
+                // Replace with default content loading logic or remove this else block if not needed
+            }
+        }
+
+        // Call function to check and redirect on page load
+        window.onload = function () {
+            redirectIfParameterPresent();
+        };
+    </script>
+
+
+
+   
     </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -216,9 +337,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 
 
-<body>
+<body>   
   <br>
     <br>
+
+
+
+   <br>
+
+   <br>
+
+ 
+
+   <br>
+
+   <br>
     <div class="glassmorph-iframe">
         <iframe src="https://open.spotify.com/embed/episode/4aoazMvsWPOA458eCxAtsz?utm_source=generator&t=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
