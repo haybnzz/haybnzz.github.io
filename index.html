@@ -473,7 +473,7 @@ gtag('config', 'G-1Q3J7XLFSW');
 
       if (permission === "granted") {
         console.log("Notification permission granted.");
-        // Show a notification when the page loads
+        // Show a notification when the permission is granted
         showNotification();
       } else {
         console.log("Notification permission denied.");
@@ -482,10 +482,15 @@ gtag('config', 'G-1Q3J7XLFSW');
   }
 
   function showNotification() {
-    if ('Notification' in window && Notification.permission === 'granted') {
-      new Notification("Welcome to hay.bnz Blog!", {
-        body: "You are now subscribed to updates.",
-        icon: "https://github.com/haydenbanz/haydenbanz.github.io/blob/main/favicons/android-icon-192x192.png?raw=true" // Replace with your blog icon URL
+    if (Notification.permission === 'granted') {
+      navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification("Welcome to hay.bnz Blog!", {
+          body: "You are now subscribed to updates.",
+          icon: "https://github.com/haydenbanz/haydenbanz.github.io/blob/main/favicons/android-icon-192x192.png", // Replace with your blog icon URL
+          tag: "welcome-notification"
+        });
+      }).catch(error => {
+        console.error('Service Worker registration failed:', error);
       });
     }
   }
@@ -500,8 +505,6 @@ gtag('config', 'G-1Q3J7XLFSW');
     }
   };
 </script>
-
-
 
 
 
