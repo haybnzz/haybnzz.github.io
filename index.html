@@ -223,41 +223,8 @@ gtag('config', 'G-1Q3J7XLFSW');
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  // Request notification permission
-    messaging.requestPermission()
-      .then(() => {
-        return messaging.getToken();
-      })
-      .then((token) => {
-        console.log('FCM Token:', token);
-        // Optionally, send this token to your server
-      })
-      .catch((err) => {
-        console.error('Unable to get permission to notify.', err);
-      });
 
-    // Handle follow button click
-    document.getElementById('followButton').addEventListener('click', function() {
-      // You can send a notification to the user here or log it
-      alert('You have followed!');
-    });
-
-    // Handle incoming messages
-    messaging.onMessage((payload) => {
-      console.log('Message received. ', payload);
-      const notificationTitle = payload.notification.title;
-      const notificationOptions = {
-        body: payload.notification.body,
-        icon: payload.notification.icon
-      };
-
-      if (Notification.permission === 'granted') {
-        const notification = new Notification(notificationTitle, notificationOptions);
-        notification.onclick = () => {
-          window.open(payload.notification.click_action);
-        };
-      }
-    });
+  
   </script>
 
    
@@ -495,7 +462,48 @@ gtag('config', 'G-1Q3J7XLFSW');
     Follow
   </button>
   
+<script>
+  // Initialize Firebase Cloud Messaging
+  const messaging = firebase.messaging();
 
+  document.querySelector('.follow-button').addEventListener('click', async () => {
+    try {
+      // Request notification permission from the user
+      const permission = await Notification.requestPermission();
+      
+      if (permission === 'granted') {
+        // Get the FCM token
+        const token = await messaging.getToken();
+        console.log('FCM Token:', token);
+
+        // Display a subscription confirmation notification
+        showSubscriptionNotification();
+
+        // Here you can send the token to your server or store it for future use
+        // e.g., saveTokenToDatabase(token);
+
+      } else {
+        console.log('Notification permission denied.');
+      }
+    } catch (error) {
+      console.error('Error getting permission or token:', error);
+    }
+  });
+
+  // Function to show the subscription confirmation notification
+  function showSubscriptionNotification() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then(registration => {
+        registration.showNotification('Subscribed to hay.bnz Blog', {
+          body: 'You will now receive updates from hay.bnz Blog.',
+          icon: 'https://example.com/icon.png', // Replace with your blog icon URL
+          vibrate: [200, 100, 200],
+          tag: 'subscription-notification'
+        });
+      });
+    }
+  }
+</script>
   <!-- Subscribe Button -->
   <a 
     class="subscribe-link" 
