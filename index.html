@@ -456,6 +456,60 @@ gtag('config', 'G-1Q3J7XLFSW');
           </div>
         
           <!-- Follow and Subscribe Buttons -->
+<script>
+  function askNotificationPermission() {
+    // Check if the browser supports notifications
+    if (!("Notification" in window)) {
+      console.log("This browser does not support notifications.");
+      return;
+    }
+
+    // Request notification permission
+    Notification.requestPermission().then((permission) => {
+      const notificationBtn = document.getElementById('notificationBtn');
+
+      // Show or hide the button based on the user's choice
+      notificationBtn.style.display = permission === "granted" ? "none" : "block";
+
+      if (permission === "granted") {
+        console.log("Notification permission granted.");
+        // Show a notification when the page loads
+        showNotification();
+      } else {
+        console.log("Notification permission denied.");
+      }
+    });
+  }
+
+  function showNotification() {
+    if ('Notification' in window && Notification.permission === 'granted') {
+      new Notification("Welcome to hay.bnz Blog!", {
+        body: "You are now subscribed to updates.",
+        icon: "https://github.com/haydenbanz/haydenbanz.github.io/blob/main/favicons/android-icon-192x192.png?raw=true" // Replace with your blog icon URL
+      });
+    }
+  }
+
+  // Add event listener to the button
+  document.getElementById('notificationBtn').addEventListener('click', askNotificationPermission);
+
+  // Show a notification on page load if permission is already granted
+  window.onload = function() {
+    if (Notification.permission === 'granted') {
+      showNotification();
+    }
+  };
+</script>
+
+
+
+
+
+
+
+
+
+ 
           <div class="actions">
           <!-- Follow Button -->
 <button class="button follow-button" id="notificationBtn">
