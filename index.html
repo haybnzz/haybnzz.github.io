@@ -458,52 +458,38 @@ gtag('config', 'G-1Q3J7XLFSW');
           <!-- Follow and Subscribe Buttons -->
           <div class="actions">
           <!-- Follow Button -->
-<button class="button follow-button">
-    Follow
-  </button>
-  
-<script>
-  // Initialize Firebase Cloud Messaging
-  const messaging = firebase.messaging();
+<button class="button follow-button" id="notificationBtn">
+  Follow
+</button><script>
+  function askNotificationPermission() {
+    // Check if the browser supports notifications
+    if (!("Notification" in window)) {
+      console.log("This browser does not support notifications.");
+      return;
+    }
 
-  document.querySelector('.follow-button').addEventListener('click', async () => {
-    try {
-      // Request notification permission from the user
-      const permission = await Notification.requestPermission();
-      
-      if (permission === 'granted') {
-        // Get the FCM token
-        const token = await messaging.getToken();
-        console.log('FCM Token:', token);
+    // Request notification permission
+    Notification.requestPermission().then((permission) => {
+      const notificationBtn = document.getElementById('notificationBtn');
 
-        // Display a subscription confirmation notification
-        showSubscriptionNotification();
+      // Show or hide the button based on the user's choice
+      notificationBtn.style.display = permission === "granted" ? "none" : "block";
 
-        // Here you can send the token to your server or store it for future use
-        // e.g., saveTokenToDatabase(token);
-
+      if (permission === "granted") {
+        console.log("Notification permission granted.");
+        // Add additional logic here if needed, e.g., subscribing the user to notifications
       } else {
-        console.log('Notification permission denied.');
+        console.log("Notification permission denied.");
       }
-    } catch (error) {
-      console.error('Error getting permission or token:', error);
-    }
-  });
-
-  // Function to show the subscription confirmation notification
-  function showSubscriptionNotification() {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.ready.then(registration => {
-        registration.showNotification('Subscribed to hay.bnz Blog', {
-          body: 'You will now receive updates from hay.bnz Blog.',
-          icon: 'https://example.com/icon.png', // Replace with your blog icon URL
-          vibrate: [200, 100, 200],
-          tag: 'subscription-notification'
-        });
-      });
-    }
+    });
   }
+
+  // Add event listener to the button
+  document.getElementById('notificationBtn').addEventListener('click', askNotificationPermission);
 </script>
+
+  
+
   <!-- Subscribe Button -->
   <a 
     class="subscribe-link" 
