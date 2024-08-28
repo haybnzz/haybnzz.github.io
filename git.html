@@ -42,6 +42,7 @@
 <!-- Links -->
 <link data-rh="true" rel="icon" href="favicons/apple-icon-120x120.png"/>
 <link data-rh="true" rel="search" type="application/opensearchdescription+xml" title="Medium" href="https://medium.com/@haydenbanz/osd.xml"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
 <!-- SEO and Verification Meta Tags -->
@@ -80,6 +81,7 @@
 <link rel="stylesheet" href="https://haydenbanz.github.io/css/hayden.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <!-- External Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -263,24 +265,24 @@ gtag('config', 'G-1Q3J7XLFSW');
       #NAVBAR
     -->
     <nav class="navbar">
-      <ul class="navbar-list">
-        <li class="navbar-item">
-          <button class="" data-nav-link>Hay.bnz</button>
-        </li>
-        <li class="navbar-item">
-          <button onclick="window.location.href='/git'" class="navbar-link" data-nav-link>Github</button>
-        </li>
-        <li class="navbar-item">
-          <button class="navbar-link" onclick="window.location.href='#blog'" data-nav-link>Podcast</button>
-        </li>
-        <li class="navbar-item">
-          <button  onclick="window.location.href='/portfolio'" class="navbar-link" data-nav-link>Portfolio</button>
-        </li>
-        <li class="navbar-item">
-          <button class="navbar-link" onclick="window.location.href='contact.html'">Contact</button>
-        </li>
-      </ul>
-    </nav>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="" data-nav-link>Hay.bnz - <i class="fab fa-git-alt"></i>&nbsp;Git</button>
+          </li>
+          <li class="navbar-item">
+            <button onclick="window.location.href='/blog'" class="navbar-link" data-nav-link><i class="fa-brands fa-medium"></i>&nbsp;Blog</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="window.location.href='podcast'" data-nav-link>
+              <i class="fab fa-spotify"></i>&nbsp;Podcast
+            </button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i>&nbsp;Contact</button>
+          </li>
+        </ul>
+      </nav>
+      
 
     
     
@@ -599,124 +601,151 @@ gtag('config', 'G-1Q3J7XLFSW');
 <br>
 
  
-
-  <div class="articles">
-            <div class="article">
-                <div class="article-header">
-                    <h2>HadesConnect</h2>
-                </div>
-                <div class="article-content">
-                    <p><strong>Description:</strong> A software solution for emergency switch activation and remote desktop control through Discord.</p>
-                    <p><strong>Language:</strong> Python</p>
-                    <p><strong><span class="material-icons">star</span> Stars:</strong> 7</p>
-                    <p><strong><span class="material-icons">fork_left</span> Forks:</strong> 2</p>
-                    <p><a href="https://github.com/haydenbanz/HadesConnect" target="_blank">View on GitHub</a></p>
-                </div>
+<div class="container">
+   
+        <div class="article">
+            <div class="article-header">
+                <h2>HadesConnect</h2>
             </div>
-
-            <div class="article">
-                <div class="article-header">
-                    <h2>PyBTC</h2>
+            <div class="article-content">
+                <p><strong>Description:</strong> A software solution for emergency switch activation and remote desktop control through Discord.</p>
+                <div class="repo-info">
+                    <p><span class="material-icons">star</span> 7 Stars</p>
+                    <p><span class="material-icons">fork_left</span> 2 Forks</p>
+                    <p><span class="material-icons">code</span> Python</p>
+                    <p><span class="material-icons">description</span> <a href="https://github.com/haydenbanz/HadesConnect/wiki" target="_blank">Documentation</a></p>
+                    <p><span class="material-icons">license</span> MIT License</p>
+                    <p><span class="material-icons">group</span> <a href="https://github.com/haydenbanz/HadesConnect/graphs/contributors" target="_blank">Collaborators</a></p>
                 </div>
-                <div class="article-content">
-                    <p><strong>Description:</strong> A Python-based tool for managing Bitcoin wallets and securely checking balances.</p>
-                    <p><strong>Language:</strong> Python</p>
-                    <p><strong><span class="material-icons">star</span> Stars:</strong> 4</p>
-                    <p><strong><span class="material-icons">fork_left</span> Forks:</strong> 4</p>
-                    <p><a href="https://github.com/haydenbanz/PyBTC" target="_blank">View on GitHub</a></p>
-                </div>
+                <p><a href="https://github.com/haydenbanz/HadesConnect" target="_blank">View on GitHub</a></p>
             </div>
+        </div>
 
-            <div class="article">
-                <div class="article-header">
-                    <h2>SpeechStylis</h2>
-                </div>
-                <div class="article-content">
-                    <p><strong>Description:</strong> Voice cloning software for personalized expression.</p>
-                    <p><strong>Language:</strong> Jupyter Notebook</p>
-                    <p><strong><span class="material-icons">star</span> Stars:</strong> 7</p>
-                    <p><strong><span class="material-icons">fork_left</span> Forks:</strong> 4</p>
-                    <p><a href="https://github.com/haydenbanz/SpeechStylis" target="_blank">View on GitHub</a></p>
-                </div>
+        <div class="article">
+            <div class="article-header">
+                <h2>PyBTC</h2>
             </div>
+            <div class="article-content">
+                <p><strong>Description:</strong> A Python-based tool for managing Bitcoin wallets and securely checking balances.</p>
+                <div class="repo-info">
+                    <p><span class="material-icons">star</span> 4 Stars</p>
+                    <p><span class="material-icons">fork_left</span> 4 Forks</p>
+                    <p><span class="material-icons">code</span> Python</p>
+                    <p><span class="material-icons">description</span> <a href="https://github.com/haydenbanz/PyBTC/wiki" target="_blank">Documentation</a></p>
+                    <p><span class="material-icons">license</span> MIT License</p>
+                    <p><span class="material-icons">group</span> <a href="https://github.com/haydenbanz/PyBTC/graphs/contributors" target="_blank">Collaborators</a></p>
+                </div>
+                <p><a href="https://github.com/haydenbanz/PyBTC" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
 
-            <div class="article">
-                <div class="article-header">
-                    <h2>Fingerprint-Fusion</h2>
+        <div class="article">
+            <div class="article-header">
+                <h2>SpeechStylis</h2>
+            </div>
+            <div class="article-content">
+                <p><strong>Description:</strong> Voice cloning software for personalized expression.</p>
+                <div class="repo-info">
+                    <p><span class="material-icons">star</span> 7 Stars</p>
+                    <p><span class="material-icons">fork_left</span> 4 Forks</p>
+                    <p><span class="material-icons">code</span> Jupyter Notebook</p>
+                    <p><span class="material-icons">description</span> <a href="https://github.com/haydenbanz/SpeechStylis/wiki" target="_blank">Documentation</a></p>
+                    <p><span class="material-icons">license</span> MIT License</p>
+                    <p><span class="material-icons">group</span> <a href="https://github.com/haydenbanz/SpeechStylis/graphs/contributors" target="_blank">Collaborators</a></p>
                 </div>
-                <div class="article-content">
-                    <p><strong>Description:</strong> A Python application for fingerprint analysis and matching using machine learning.</p>
-                    <p><strong>Language:</strong> Python</p>
-                    <p><strong><span class="material-icons">star</span> Stars:</strong> 4</p>
-                    <p><strong><span class="material-icons">fork_left</span> Forks:</strong> 4</p>
-                    <p><a href="https://github.com/haydenbanz/Fingerprint-Fusion" target="_blank">View on GitHub</a></p>
+                <p><a href="https://github.com/haydenbanz/SpeechStylis" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+
+        <div class="article">
+            <div class="article-header">
+                <h2>Fingerprint-Fusion</h2>
+            </div>
+            <div class="article-content">
+                <p><strong>Description:</strong> A Python application for fingerprint analysis and matching using machine learning.</p>
+                <div class="repo-info">
+                    <p><span class="material-icons">star</span> 4 Stars</p>
+                    <p><span class="material-icons">fork_left</span> 4 Forks</p>
+                    <p><span class="material-icons">code</span> Python</p>
+                    <p><span class="material-icons">description</span> <a href="https://github.com/haydenbanz/Fingerprint-Fusion/wiki" target="_blank">Documentation</a></p>
+                    <p><span class="material-icons">license</span> MIT License</p>
+                    <p><span class="material-icons">group</span> <a href="https://github.com/haydenbanz/Fingerprint-Fusion/graphs/contributors" target="_blank">Collaborators</a></p>
                 </div>
+                <p><a href="https://github.com/haydenbanz/Fingerprint-Fusion" target="_blank">View on GitHub</a></p>
             </div>
         </div>
     </div>
-      <style>.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    color: #fff;
-    text-align: center;
-}
-
-.articles {
-    display: flex;
-    flex-direction: column;
-}
-
-.article {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.article-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.article-content h2 {
-    color: #fff;
-    margin: 0 0 10px;
-}
-
-.article-content p {
-    color: #ddd;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.material-icons {
-    font-size: 18px;
-    margin-right: 5px;
-}
-
-a {
-    color: #00f;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}</style>
+</div>
 
 
-
-
-
-
-
+<style>
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #fff;
+        text-align: center;
+    }
+    
+    .articles {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .article {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .article-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .article-content h2 {
+        color: #fff;
+        margin: 0 0 10px;
+    }
+    
+    .article-content p {
+        color: #ddd;
+        margin: 0;
+    }
+    
+    .repo-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .repo-info p {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .material-icons {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    
+    a {
+        color: #00f;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }</style>
 
 
     </section></article></main>
