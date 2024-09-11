@@ -603,63 +603,101 @@ gtag('config', 'G-1Q3J7XLFSW');
 </div>
 <br>
 
-<script>
-    async function fetchRepoData(repoName, elementId) {
-        const url = `https://api.github.com/repos/haydenbanz/${repoName}`;
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json();
-    
-            // Update the HTML with fetched data
-            document.querySelector(`#${elementId} .repo-stars`).textContent = `${data.stargazers_count} Stars`;
-            document.querySelector(`#${elementId} .repo-forks`).textContent = `${data.forks_count} Forks`;
-            document.querySelector(`#${elementId} .repo-language`).textContent = data.language || 'N/A';
-            document.querySelector(`#${elementId} .repo-license`).textContent = data.license ? data.license.name : 'No License';
-            document.querySelector(`#${elementId} .repo-contributors`).href = `https://github.com/haydenbanz/${repoName}/graphs/contributors`;
-            document.querySelector(`#${elementId} .repo-link`).href = `https://github.com/haydenbanz/${repoName}`;
-        } catch (error) {
-            console.error('Error fetching repo data:', error);
-        }
-    }
-    
-    // Fetch data for all repositories
-    fetchRepoData('HadesConnect', 'hadesconnect');
-    fetchRepoData('PyBTC', 'pybtc');
-    fetchRepoData('SpeechStylis', 'speechstylis');
-    fetchRepoData('Fingerprint-Fusion', 'fingerprint-fusion');
-    </script>
-    
-<div class="container">
-    <div id="hadesconnect" class="article">
-        <div class="article-header">
-            <h2>HadesConnect</h2>
+
+   <div class="container">
+        <div class="paper-card">
+            <img src="https://attachments.academia-assets.com/118128925/thumbnails/1.jpg" alt="Analyzing Browsing Behavior">
+            <a href="https://www.academia.edu/123775552/ANALYZING_BROWSING_BEHAVIOR_WITH_DATA_MINING_TECHNIQUES" class="paper-title">Analyzing Browsing Behavior with Data Mining Techniques</a>
+            <p>Hay.bnz, 2024</p>
+            <p>This research paper investigates the application of sentiment and behavioral analysis on browser data...</p>
+            <a href="https://www.academia.edu/attachments/118128925/download_file?st=MTcyNjA0ODg1OCwxMzguMTk5LjIxLjIwOCwyMjUzMTI3NzY%3D&s=profile" class="download-btn">Download</a>
+            <p class="views">3 Views </p>
         </div>
-        <div class="article-content">
-            <p><strong>Description:</strong> A software solution for emergency switch activation and remote desktop control through Discord.</p>
-            <div class="repo-info">
-                <p><span class="material-icons">star</span> <span class="repo-stars">Loading...</span></p>
-                <p><span class="material-icons">fork_left</span> <span class="repo-forks">Loading...</span></p>
-                <p><span class="material-icons">code</span> <span class="repo-language">Loading...</span></p>
-                <p><span class="material-icons">description</span> <a href="https://github.com/haydenbanz/HadesConnect/wiki" target="_blank">Documentation</a></p>
-                <p><span class="material-icons">license</span> <span class="repo-license">Loading...</span></p>
-                <p><span class="material-icons">group</span> <a class="repo-contributors" href="#" target="_blank">Collaborators</a></p>
-            </div>
-            <p><a class="repo-link" href="#" target="_blank">View on GitHub</a></p>
+        
+        <div class="paper-card">
+            <img src="https://attachments.academia-assets.com/105588971/thumbnails/1.jpg" alt="Mutated Rabies Virus">
+            <a href="lhttps://www.academia.edu/98310727/Mutated_Rabies_Virus_A_Looming_Threat_to_Humanity" class="paper-title">Mutated Rabies Virus: A Looming Threat to Humanity</a>
+            <p>Mutated Rabies Virus: A Looming Threat to Humanity, 2023</p>
+            <p>Rabies is a viral disease which can affect the human nervous system and also be transmitted to humans...</p>
+            <a href="https://www.academia.edu/attachments/99696957/download_file?st=MTcyNjA0ODg1OCwxMzguMTk5LjIxLjIwOCwyMjUzMTI3NzY%3D&s=profile" class="download-btn">Download</a>
+            <p class="views">12 Views</p>
+        </div>
+        <div class="paper-card">
+            <img src="thumbnail4.jpg" alt="Uploading Human Consciousness to AI">
+            <a href="https://www.academia.edu/97307369/The_idea_about_of_uploading_human_consciousness_or_human_intelligence_to_artificial_intelligence_AI" class="paper-title">The Idea About Uploading Human Consciousness or Human Intelligence to Artificial Intelligence (AI)</a>
+            <p>The Idea About Uploading Human Consciousness or Human Intelligence to Artificial Intelligence (AI), 2023</p>
+            <p>This paper explores the concept of transferring human consciousness to AI systems...</p>
+            <a href="https://www.academia.edu/attachments/98963969/download_file?st=MTcyNjA0ODg1OCwxMzguMTk5LjIxLjIwOCwyMjUzMTI3NzY%3D&s=profile" class="download-btn">Download</a>
+            <p class="views">24 Views </p>
+        </div>
+        <div class="paper-card">
+            <img src="https://attachments.academia-assets.com/101587820/thumbnails/1.jpg" alt="Effect of Container Size on Frog Tadpoles">
+            <a href="https://www.academia.edu/100896858/The_Effect_of_Container_Size_on_the_Growth_and_Development_of_Frog_Tadpoles" class="paper-title">The Effect of Container Size on the Growth and Development of Frog Tadpoles</a>
+            <p>The growth and development of frog tadpoles can be influenced by a variety of factors, including container size...</p>
+            <a href="https://www.academia.edu/attachments/101587820/download_file?st=MTcyNjA0ODg1OCwxMzguMTk5LjIxLjIwOCwyMjUzMTI3NzY%3D&s=profile" class="download-btn">Download</a>
+            <p class="views">10 Views</p>
         </div>
     </div>
-
   
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Call the functions here
-        fetchRepoData('HadesConnect', 'hadesconnect');
-        fetchRepoData('PyBTC', 'pybtc');
-        fetchRepoData('SpeechStylis', 'speechstylis');
-        fetchRepoData('Fingerprint-Fusion', 'fingerprint-fusion');
-    });
-    </script>
+<style>.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.paper-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.paper-card:hover {
+    transform: translateY(-5px);
+}
+
+.paper-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.paper-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #007bff; /* Example color for the title */
+}
+
+p {
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+}
+
+.views {
+    font-size: 0.8em;
+    color: #555;
+}</style>
     
 
 <style>
