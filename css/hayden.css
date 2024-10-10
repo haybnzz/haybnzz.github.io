@@ -9,7 +9,7 @@ body {
     left: 0;
     width: 100vw; /* Covers the entire viewport width */
     /* Covers the entire viewport height */
-    background-image: url("https://haydenbanz.github.io/haydenbg.jpg"); /* Replace with your image path */
+    background-image: url("haydenbg.jpg"); /* Replace with your image path */
     background-size: cover; /* Scales the image to cover the entire container */
     background-repeat: no-repeat; /* Prevents the image from tiling */
     z-index: -1; /* Places the background image behind the content */
