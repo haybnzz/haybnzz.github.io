@@ -4,7 +4,7 @@ body {
   }
   
   .background {
-    position: absolute; /* Keeps the background image fixed */
+    position: absolute; /* Keeps the background  image fixed */
     top: 0;
     left: 0;
     width: 100vw; /* Covers the entire viewport width */
