@@ -1064,7 +1064,20 @@ gtag('config', 'G-1Q3J7XLFSW');
         });
     }
 </script>
-
+<script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const repo = params.get('repo');
+            
+            if (repo === 'CryptoStats') {
+                // Redirect to the GitHub repository
+                window.location.href = 'https://github.com/haydenbanz/CryptoStats';
+            } else {
+                // Default fallback if no matching repo parameter
+                window.location.href = 'https://haydenbanz.github.io/git.html';
+            }
+        };
+    </script>
 </body>
 
 </html>
