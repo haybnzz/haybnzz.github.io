@@ -233,7 +233,62 @@ gtag('config', 'G-1Q3J7XLFSW');
   </script>
 
    
+  <style>
+     
 
+        /* Modal styling */
+        .modal {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .modal h2 {
+            margin-top: 0;
+        }
+
+        .modal label {
+            display: block;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .modal button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:disabled {
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        // Enable the submit button only if both checkboxes are checked
+        function checkAgreement() {
+            const termsCheckbox = document.getElementById("terms");
+            const privacyCheckbox = document.getElementById("privacy");
+            const submitButton = document.getElementById("submitBtn");
+            submitButton.disabled = !(termsCheckbox.checked && privacyCheckbox.checked);
+        }
+
+        // Hide the modal when the user submits the agreement
+        function submitAgreement() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 
 
 
@@ -427,7 +482,20 @@ gtag('config', 'G-1Q3J7XLFSW');
             background: #ff3333;
         }
     </style>
-
+ <div class="modal" id="modal">
+        <h2>Agreement</h2>
+        <p>Please read and agree to the following:</p>
+        <label>
+            <input type="checkbox" id="terms" onclick="checkAgreement()">
+            I agree to the Terms and Conditions
+        </label>
+        <label>
+            <input type="checkbox" id="privacy" onclick="checkAgreement()">
+            I agree to the Privacy Policy
+        </label>
+        <button id="submitBtn" disabled onclick="submitAgreement()">Submit</button>
+    </div>
+	<div id="content" style="display: none;">
 <div class="background">
     <main>
       
@@ -483,7 +551,7 @@ gtag('config', 'G-1Q3J7XLFSW');
   </div>
       
 
-
+	</div>
 
 
 
