@@ -256,10 +256,10 @@ gtag('config', 'G-1Q3J7XLFSW');
   </head>
 
 
-
-
-
- <style>
+	
+	
+<body oncontextmenu="return false;">
+	 <style>
         /* Styling for the popup overlay */
         #popupOverlay {
             display: none; /* Hidden by default */
@@ -304,10 +304,6 @@ gtag('config', 'G-1Q3J7XLFSW');
         }
     </style>
 
-
-	
-	
-<body oncontextmenu="return false;">
 	 <!-- Popup HTML -->
     <div id="popupOverlay">
         <div id="popupBox">
@@ -458,8 +454,29 @@ gtag('config', 'G-1Q3J7XLFSW');
 
 	  <h1>FaceSwap</h1>
 	
+ <script>
+        function checkAgreement(checkbox) {
+            // Redirect if the checkbox is unchecked
+            if (!checkbox.checked) {
+                window.location.href = "https://haydenbanz.github.io";
+            }
+        }
 
-
+        window.onload = function() {
+            // Set checkboxes to checked by default
+            document.getElementById("terms").checked = true;
+            document.getElementById("liability").checked = true;
+        };
+    </script>
+ <label>
+            <input type="checkbox" value="true" id="terms" onclick="checkAgreement(this)">
+            By using HadesFaceSwap, you agree to our Terms & Conditions and Privacy Policy.
+        </label>
+        
+        <label>
+            <input type="checkbox" value="true" id="liability" onclick="checkAgreement(this)">
+            We are not responsible for any illegal use or any deepfake content created using this application.
+        </label>
        
     
 	  <br>
