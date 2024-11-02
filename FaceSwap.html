@@ -470,14 +470,40 @@ gtag('config', 'G-1Q3J7XLFSW');
     </script>
  <label>
             <input type="checkbox" value="true" id="terms" onclick="checkAgreement(this)">
-            By using HadesFaceSwap, you agree to our Terms & Conditions and Privacy Policy.
+            By using HadesFaceSwap, you agree to our <a href="https://haydenbanz.github.io/pages/legal.html">Terms & Conditions and Privacy Policy.</a>
         </label>
         
         <label>
             <input type="checkbox" value="true" id="liability" onclick="checkAgreement(this)">
             We are not responsible for any illegal use or any deepfake content created using this application.
         </label>
-       
+         <style>
+
+
+        label {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            font-family: 'Techno', sans-serif;
+            color: #00ff00; /* For a glitch effect */
+            text-shadow: 1px 1px 2px #ff00ff, -1px -1px 2px #00ffff;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #00ff00;
+        }
+
+        a {
+            color: #ff00ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-shadow: 1px 1px 4px #ffffff;
+        }
+    </style>
     
 	  <br>
 		<br>
