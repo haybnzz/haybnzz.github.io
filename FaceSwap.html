@@ -87,29 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PMT3FZ6W');
 </script>
-<SCRIPT language=JavaScript>
 
-<!-- http://www.spacegun.co.uk -->
-
-var message = "function disabled";
-
-function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
-
-if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
-
-document.onmousedown = rtclickcheck;
-
-</SCRIPT>
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q3J7XLFSW"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'G-1Q3J7XLFSW');
-</script>
 
 <!-- Hotjar Tracking Code -->
 <script>
@@ -258,7 +236,7 @@ gtag('config', 'G-1Q3J7XLFSW');
 
 	
 	
-<body oncontextmenu="return false;">
+<bod>
 	 <style>
         /* Styling for the popup overlay */
         #popupOverlay {
@@ -305,77 +283,7 @@ gtag('config', 'G-1Q3J7XLFSW');
     </style>
 
 	 <!-- Popup HTML -->
-    <div id="popupOverlay">
-        <div id="popupBox">
-            <p>⚠️ Don't try to hack, or you'll be hacked!</p>
-            <button id="closeButton">Close</button>
-        </div>
-    </div>
-
-    <script>
-        // Show the custom popup when restricted keys are pressed
-        document.onkeydown = function(e) {
-            if (
-                e.keyCode == 123 || // F12
-                (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Ctrl+Shift+I
-                (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) || // Ctrl+Shift+C
-                (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) || // Ctrl+Shift+J
-                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) // Ctrl+U
-            ) {
-                document.getElementById("popupOverlay").style.display = "flex";
-                return false;
-            }
-        };
-
-        // Close the popup when the close button is clicked
-        document.getElementById("closeButton").onclick = function() {
-            document.getElementById("popupOverlay").style.display = "none";
-        };
-    </script>
-	  <!-- Popup HTML -->
-    <div id="popupOverlay">
-        <div id="popupBox">
-            <p>⚠️ Access Denied: Viewing source code is not allowed!</p>
-            <button id="closeButton">Close</button>
-        </div>
-    </div>
-
-    <script>
-        // Function to check if the URL contains "view-source:"
-        function detectViewSource() {
-            if (window.location.href.startsWith("view-source:")) {
-                // Redirect to the main page
-                window.location.href = "https://haydenbanz.github.io/Hadesfaceswap.html";
-                
-                // Show popup after redirect
-                setTimeout(() => {
-                    document.getElementById("popupOverlay").style.display = "flex";
-                }, 500);
-            }
-        }
-
-        // Call detectViewSource when the page loads
-        detectViewSource();
-
-        // Prevent certain key combinations for developer tools
-        document.onkeydown = function(e) {
-            if (
-                e.keyCode == 123 || // F12
-                (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Ctrl+Shift+I
-                (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) || // Ctrl+Shift+C
-                (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) || // Ctrl+Shift+J
-                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) // Ctrl+U
-            ) {
-                document.getElementById("popupOverlay").style.display = "flex";
-                return false;
-            }
-        };
-
-        // Close the popup when the close button is clicked
-        document.getElementById("closeButton").onclick = function() {
-            document.getElementById("popupOverlay").style.display = "none";
-        };
-    </script>
+    
   <style>
         /* Styling for the popup overlay */
         #popupOverlay {
