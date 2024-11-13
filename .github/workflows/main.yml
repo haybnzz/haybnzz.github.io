@@ -52,4 +52,16 @@ jobs:
           plugin_tweets: yes
           plugin_tweets_limit: 2
           plugin_tweets_token: ${{ secrets.TWITTER_TOKEN }}
-          plugin_tweets_user: sudo_entity
+          plugin_tweets_user: sudo_entityz
+          plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
+          plugin_wakatime_url: https://wakatime.com/@haydenbanz
+          plugin_wakatime_user: current
+          plugin_leetcode: yes
+          plugin_leetcode_limit_recent: 2
+          plugin_leetcode_limit_skills: 10
+          plugin_leetcode_sections: solved
+          plugin_leetcode_user: haydenbanz
+
+
