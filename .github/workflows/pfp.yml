@@ -19,7 +19,7 @@ jobs:
       contents: write
     steps:
       # Use the main branch for 'metrics' action
-      - uses: haydenbanz/metrics@main  # Change 'main' to 'hades' if that branch exists
+      - uses: haydenbanz/metrics@hades  # Change 'main' to 'hades' if that branch exists
         with:
           # GitHub token with necessary permissions
           # Required scopes:
