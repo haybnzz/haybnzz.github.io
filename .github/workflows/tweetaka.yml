@@ -1,0 +1,43 @@
+name: Geotrics
+
+on:
+  # Schedule updates every hour
+  schedule:
+    - cron: "0 * * * *"
+  # Enable manual workflow dispatch and run on pushes to master/main
+  workflow_dispatch:
+  push:
+    branches:
+      - "master"
+      - "main"
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Use the 'hades' branch if it exists, otherwise use 'main'
+      - uses: haydenbanz/metrics@hades
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # User and template settings
+          user: haydenbanz
+          template: classic
+          config_timezone: Asia/Kolkata
+
+         
+
+         
+          plugin_tweets: yes
+          plugin_tweets_limit: 2
+          plugin_tweets_token: ${{ secrets.TWITTER_TOKEN }}
+          plugin_tweets_user: sudo_entityz
+
+          plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
+          plugin_wakatime_user: current
+
+       
