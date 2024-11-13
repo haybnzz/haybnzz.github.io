@@ -1,4 +1,4 @@
-# GitHub Actions workflow for Metrics
+
 name: Metrics
 
 on:
