@@ -402,8 +402,8 @@ gtag('config', 'G-1Q3J7XLFSW');
 <style>
 
     .hayz {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Default 3 columns */
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
@@ -458,28 +458,16 @@ gtag('config', 'G-1Q3J7XLFSW');
         /* Responsive Design */
         @media (max-width: 768px) { /* Tablets */
             .containers {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller posts */
-                gap: 15px;
-            }
-            .content h2 {
-                font-size: 1.2rem;
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet view */
             }
         }
 
-        @media (max-width: 450px) { /* Mobile devices */
-            .containers {
-                grid-template-columns: 1fr; /* One blog post per row */
-                gap: 10px;
-            }
-            .blog-post {
-                transform: none; /* No hover scale for mobile */
-            }
-            .content h2 {
-                font-size: 1rem;
+        @media (max-width: 480px) { /* Mobile devices */
+            .containers.single-column {
+                grid-template-columns: 1fr; /* 1 column for mobile */
             }
         }
     </style>
-
 
               
      <div class="hayz">
@@ -635,7 +623,21 @@ gtag('config', 'G-1Q3J7XLFSW');
         </div>
     </div>
 </div>
-              
+            <script>
+        // Function to add the class for mobile view
+        function adjustLayout() {
+            var container = document.querySelector('.containers');
+            if (window.innerWidth <= 480) {
+                container.classList.add('single-column');
+            } else {
+                container.classList.remove('single-column');
+            }
+        }
+
+        // Call adjustLayout on page load and resize
+        window.addEventListener('load', adjustLayout);
+        window.addEventListener('resize', adjustLayout);
+            </script>   
 </div>
             </body>
         </html>
