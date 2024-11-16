@@ -399,84 +399,83 @@ gtag('config', 'G-1Q3J7XLFSW');
 <style>
 
     .hayz {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        max-width: 1200px;
-        width: 100%;
-    }
-
-    .blog-post {
-        background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
-        border-radius: 10px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
-        transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .blog-post:hover {
-        background: rgba(255, 255, 255, 0.2); /* More opaque on hover */
-        transform: scale(1.05);
-        box-shadow: 0 0 20px 5px cyan; /* Glowing cyan effect */
-    }
-
-    .blog-post img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .content {
-        padding: 15px;
-    }
-
-    .content h2 {
-        font-size: 1.5rem;
-        margin: 10px 0;
-    }
-
-    .meta {
-        font-size: 0.9rem;
-        color: #ccc;
-        margin-bottom: 10px;
-    }
-
-    .description {
-        font-size: 1rem;
-        color: #eee;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) { /* Tablets and smaller screens */
-        .containers {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller posts */
-            gap: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
         }
-        .content h2 {
-            font-size: 1.2rem;
-        }
-    }
 
-    @media (max-width: 480px) { /* Mobile devices */
-        .containers {
-            grid-template-columns: 1fr; /* One blog post per row */
-            gap: 10px;
-        }
         .blog-post {
-            transform: none; /* No hover scale for mobile */
+            background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Safari and Chrome compatibility */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .content h2 {
-            font-size: 1rem;
-        }
-    }
-</style>
 
+        .blog-post:hover {
+            background: rgba(255, 255, 255, 0.2); /* More opaque on hover */
+            transform: scale(1.05);
+            box-shadow: 0 0 20px 5px cyan; /* Glowing cyan effect */
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .content h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #eee;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) { /* Tablets */
+            .containers {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller posts */
+                gap: 15px;
+            }
+            .content h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) { /* Mobile devices */
+            .containers {
+                grid-template-columns: 1fr; /* One blog post per row */
+                gap: 10px;
+            }
+            .blog-post {
+                transform: none; /* No hover scale for mobile */
+            }
+            .content h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
 
 
               
