@@ -383,12 +383,21 @@ gtag('config', 'G-1Q3J7XLFSW');
         </li>
       </ul>
     </nav> 
-                <div class="containers">
+                <div class="containers"><style>
+    .containers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+                        </style>
 
 
 
 <style>
-    .containers {
+    .containersx {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
@@ -432,13 +441,44 @@ gtag('config', 'G-1Q3J7XLFSW');
         font-size: 1rem;
         color: #333;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) { /* Tablets and smaller devices */
+        .containers {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+        .content h2 {
+            font-size: 1.2rem;
+        }
+        .description {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) { /* Mobile devices */
+        .containers {
+            grid-template-columns: 1fr; /* Single column for small screens */
+            padding: 10px;
+        }
+        .blog-post {
+            transform: none; /* Remove hover scale on small screens */
+        }
+        .content h2 {
+            font-size: 1rem;
+        }
+        .description {
+            font-size: 0.85rem;
+        }
+    }
 </style>
 
 
 
 
               
-     <div class="containers">
+     <div class="containersx">
 
 <!-- Blog Post 1.0.0 -->
     <div class="blog-post" id="Building Your Own AI Girlfriend Using GPT and Custom Data: A Step-by-Step Guide" onclick="window.location.href='https://medium.com/ai-in-plain-english/building-your-own-ai-girlfriend-using-gpt-and-custom-data-a-step-by-step-guide-480a023d4801';">
