@@ -402,72 +402,95 @@ gtag('config', 'G-1Q3J7XLFSW');
 <style>
 
     .hayz {
-    display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Default 3 columns */
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            width: 100%;
-        }
+             display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Default grid layout */
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        .blog-post {
-            background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* Safari and Chrome compatibility */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-        }
+    .blog-post {
+        background: rgba(255, 255, 255, 0.2); /* Transparent white */
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        backdrop-filter: blur(10px); /* Glass effect */
+        -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Border to enhance glassmorphism */
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
 
-        .blog-post:hover {
-            background: rgba(255, 255, 255, 0.2); /* More opaque on hover */
-            transform: scale(1.05);
-            box-shadow: 0 0 20px 5px cyan; /* Glowing cyan effect */
-        }
+    .blog-post:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+    }
 
-        .blog-post img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .blog-post img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-        .content {
-            padding: 15px;
+    .content {
+        padding: 15px;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    .meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    /* Responsive Design for Mobile */
+    @media (max-width: 768px) { /* For tablets and smaller */
+        .containers {
+            grid-template-columns: 1fr; /* Single column layout */
+            gap: 15px;
+            padding: 10px;
         }
 
         .content h2 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-
-        .meta {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: 10px;
+            font-size: 1.2rem; /* Slightly smaller font size */
         }
 
         .description {
-            font-size: 1rem;
-            color: #eee;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) { /* For small mobile devices */
+        .containers {
+            grid-template-columns: 1fr; /* Ensures only one blog post per row */
+            padding: 10px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) { /* Tablets */
-            .containers {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet view */
-            }
+        .blog-post {
+            transform: none; /* Disable hover scaling for mobile */
+            margin-bottom: 15px; /* Add some spacing between posts */
         }
 
-        @media (max-width: 480px) { /* Mobile devices */
-            .containers.single-column {
-                grid-template-columns: 1fr; /* 1 column for mobile */
-            }
+        .content h2 {
+            font-size: 1rem; /* Further reduce font size for smaller screens */
         }
-    </style>
+
+        .description {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
 
               
      <div class="hayz">
@@ -623,6 +646,7 @@ gtag('config', 'G-1Q3J7XLFSW');
         </div>
     </div>
 </div>
-
+              
+</div>
             </body>
         </hades>
