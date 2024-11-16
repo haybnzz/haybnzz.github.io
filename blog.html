@@ -387,54 +387,58 @@ gtag('config', 'G-1Q3J7XLFSW');
 
 
 
+<style>
+    .containers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .blog-post {
+        background: rgba(255, 255, 255, 0.2); /* Transparent white */
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        backdrop-filter: blur(10px); /* Glass effect */
+        -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Border to enhance glassmorphism */
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .blog-post:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+    }
+    .blog-post img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .content {
+        padding: 15px;
+    }
+    .content h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    .meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-size: 1rem;
+        color: #333;
+    }
+</style>
 
 
 
 
-                  <style>
- 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .blog-post {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .blog-post:hover {
-            transform: scale(1.05);
-        }
-        .blog-post img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .content {
-            padding: 15px;
-        }
-        .content h2 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-        .meta {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .description {
-            font-size: 1rem;
-            color: #333;
-        }
-    </style>
-     <div class="container">
+              
+     <div class="containers">
 
 <!-- Blog Post 1.0.0 -->
     <div class="blog-post" id="Building Your Own AI Girlfriend Using GPT and Custom Data: A Step-by-Step Guide" onclick="window.location.href='https://medium.com/ai-in-plain-english/building-your-own-ai-girlfriend-using-gpt-and-custom-data-a-step-by-step-guide-480a023d4801';">
