@@ -443,11 +443,11 @@ gtag('config', 'G-1Q3J7XLFSW');
     }
 
     /* Responsive Design */
-    @media (max-width: 768px) { /* Tablets and smaller devices */
+    @media (max-width: 768px) { /* Tablets */
         .containers {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
-            padding: 10px;
+            padding: 15px;
         }
         .content h2 {
             font-size: 1.2rem;
@@ -459,11 +459,12 @@ gtag('config', 'G-1Q3J7XLFSW');
 
     @media (max-width: 480px) { /* Mobile devices */
         .containers {
-            grid-template-columns: 1fr; /* Single column for small screens */
+            grid-template-columns: 1fr; /* Single column for mobile */
+            gap: 10px;
             padding: 10px;
         }
         .blog-post {
-            transform: none; /* Remove hover scale on small screens */
+            transform: none; /* Remove hover scale effect on mobile */
         }
         .content h2 {
             font-size: 1rem;
@@ -473,6 +474,7 @@ gtag('config', 'G-1Q3J7XLFSW');
         }
     }
 </style>
+
 
 
 
