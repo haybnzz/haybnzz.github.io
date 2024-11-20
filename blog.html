@@ -637,5 +637,55 @@ gtag('config', 'G-1Q3J7XLFSW');
 </div>
               
 </div>
+                       <script>
+
+                               // Assuming you have Google Analytics already set up
+
+// Function to send click events to Google Analytics
+function trackAnalyticsEvent(category, action, label) {
+    if (typeof gtag === 'function') { // Check if gtag (Google Analytics) is available
+        gtag('event', action, {
+            'event_category': category,
+            'event_label': label
+        });
+    } else {
+        console.warn("Google Analytics not initialized.");
+    }
+}
+
+// Add event listeners for the specified IDs
+const ids = [
+    "Building Your Own AI Girlfriend Using GPT and Custom Data: A Step-by-Step Guide",
+    "Building AI and GPT Agents for OSINT: A Guide to Everyday",
+    "Drones on Steroids: The Future of OSINT in the Sky",
+    "Get Rich with OSINT",
+    "The Art of Invisibility",
+    "Mastering Twitter OSINT",
+    "Mastering Reddit OSINT",
+    "Mastering Geo-OSINT"
+];
+
+ids.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener('click', function () {
+            // Call your existing functionality
+            existingClickFunction(this);
+
+            // Track the click event in Google Analytics
+            trackAnalyticsEvent('ButtonClick', 'Click', id);
+        });
+    } else {
+        console.warn(`Element with ID "${id}" not found.`);
+    }
+});
+
+// Example of the existing click functionality
+function existingClickFunction(element) {
+    console.log(`Clicked on: ${element.id}`);
+    // Add your other functionality here
+}
+
+                       </script>
             </body>
         </html>
