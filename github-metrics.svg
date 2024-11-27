@@ -43,7 +43,7 @@
                                     <rect class="day" x="150" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
                                     <rect class="day" x="165" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="180" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                                    <rect class="day" x="195" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
+                                    <rect class="day" x="195" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
                                 </g>
                             </svg>
                         </div>
@@ -69,7 +69,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            8563 Commits
+                            8564 Commits
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -220,20 +220,17 @@
                             sudo_entityz
                         </div>
                         <div class="tweet">
+                            Listen to "Ruisiang's Game: Crypto and the $100M Scam" by Fractured Reality .
+                            <a href="https://t.co/LIyulHfYBt" class="link">creators.spotify.com/pod/show/fract…</a>
+                            <div class="date">13:02:48 on 27 Nov 2024</div>
+                        </div>
+                        <div class="tweet">
                             RT
                             <span class="mention">@binitamshah</span>
                             : Malware "kill-floor.exe" Exploits Trusted Avast Anti-Rootkit Driver to Disable Security Software :
                             <a href="https://t.co/28XPeZwmID" class="link">trellix.com/blogs/research…</a>
                             …
                             <div class="date">03:16:59 on 27 Nov 2024</div>
-                        </div>
-                        <div class="tweet">
-                            RT
-                            <span class="mention">@binitamshah</span>
-                            : How to Emulate a Ransomware Attack :
-                            <a href="https://t.co/9plWLLXhW6" class="link">practicalsecurityanalytics.com/how-to-emulate…</a>
-                            <a href="https://t.co/AjUXEcrOa6" class="link">pic.x.com/AjUXEcrOa6</a>
-                            <div class="date">15:18:30 on 24 Nov 2024</div>
                         </div>
                     </section>
                 </div>
@@ -322,7 +319,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 27 Nov 2024, 12:49:09 (timezone Asia/Kolkata) with lowlighter/metrics@3.35.0-beta</span>
+                <span>Last updated 27 Nov 2024, 14:38:30 (timezone Asia/Kolkata) with lowlighter/metrics@3.35.0-beta</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
