@@ -4,16 +4,15 @@ body {
   }
   
   .background {
-    position: absolute; /* Keeps the background  image fixed */
+    position: fixed; /* Keeps the video fixed in place */
     top: 0;
     left: 0;
-    width: 100vw; /* Covers the entire viewport width */
-    /* Covers the entire viewport height */
-    background-image: url("https://images6.alphacoders.com/100/thumb-1920-1007088.jpg"); /* Replace with your image path */
-    background-size: cover; /* Scales the image to cover the entire container */
-    background-repeat: no-repeat; /* Prevents the image from tiling */
-    z-index: -1; /* Places the background image behind the content */
+    width: 100vw; /* Ensures the video covers the entire viewport width */
+    height: 100vh; /* Ensures the video covers the entire viewport height */
+    z-index: -1; /* Places the video behind the content */
+    object-fit: cover; /* Ensures the video scales proportionally and fills the container */
   }
+
   
   main {
     padding: 20px; /* Adds padding to the main content area */
