@@ -4,16 +4,15 @@ body {
   }
   
   .background {
-    position: fixed; /* Keeps the video fixed in place */
+    position: fixed; /* Keeps the background fixed in place */
     top: 0;
     left: 0;
-    width: 100vw; /* Ensures the video covers the entire viewport width */
-    height: 100vh; /* Ensures the video covers the entire viewport height */
-    z-index: -1; /* Places the video behind the content */
-    object-fit: cover; /* Ensures the video scales proportionally and fills the container */
-  }
+    width: 100vw; /* Ensures the background covers the entire viewport width */
+    height: 100vh; /* Ensures the background covers the entire viewport height */
+    z-index: -1; /* Places the background behind the content */
+    background: linear-gradient(45deg, #1e3c72, #2a5298); /* Defines a gradient background */
+}
 
-  
   main {
     padding: 20px; /* Adds padding to the main content area */
     color: #fff; /* Sets the text color to white for better visibility on the background image */
