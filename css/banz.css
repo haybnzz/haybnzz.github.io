@@ -3,12 +3,7 @@ body {
     font-family: sans-serif;
   }
   
-  .background {
-    position: fixed; /* Keeps the background fixed in place */
-    top: 0;
-    left: 0;
-   
-}
+
 
   main {
     padding: 20px; /* Adds padding to the main content area */
