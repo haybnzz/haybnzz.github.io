@@ -18,12 +18,12 @@ jobs:
       contents: write
     steps:
       # Use the 'hades' branch if it exists, otherwise use 'main'
-      - uses: haydenbanz/metrics@hades
+      - uses: haybnz/metrics@hades
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # User and template settings
-          user: haydenbanz
+          user: haybnz
           template: classic
           config_timezone: Asia/Kolkata
 
