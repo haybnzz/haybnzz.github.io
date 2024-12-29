@@ -18,7 +18,7 @@ jobs:
       contents: write
     steps:
       # Use the 'hades' branch if it exists, otherwise use 'main'
-      - uses: haybnz/metrics@hades
+      - uses: haybnzz/metrics@hades
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
